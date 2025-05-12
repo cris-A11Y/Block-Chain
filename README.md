@@ -13,18 +13,26 @@ An end-to-end framework for detecting smart contract vulnerabilities and on-chai
 ## 📂 Repository Layout
 
 - `On-chain anomaly detection/`  
-  Contains modules and scripts related to smart contract vulnerability detection tasks:
-  - `data_processing.py`: Loads the SmartBugs dataset and performs token/line masking.
-  - `main.py`: CodeBERT fine-tuning and inference script.
-  - `preprocess_single_file.py`: Helper script to preprocess a single Solidity (`.sol`) file.
+  On-chain anomaly detection module including phishing and flash loan attacks detection:
+  - `fraud_address_detection_model/`: Folder containing the GCN model and its configurations.
+  - `Build_the_capital_flow.py`: NetworkX transaction flow visualizer.
+  - `Dataset.csv`: Example dataset for testing and validation.
+  - `data_processing.py`: Converts CSV data to PyTorch Geometric (PyG) graph format.
+  - `fraud_address_detection_model.py`: GCN supervised phishing detection model.
+  - `fraud_address_detection_test.py`: Interactive phishing address prediction and testing script.
+  - `unsupervised_flashloan_detection_model.py`: Graph AutoEncoder (GAE) + KMeans flash loan attack detector.
 
 - `smartbugs-curated-main/`  
-  A module focused on on-chain abuse detection, including phishing and flash loan attacks:
-  - `data_processing.py`: Converts CSV data to PyTorch Geometric (PyG) graph format.
-  - `fraud_address_detection_model.py`: Graph Convolutional Network (GCN) model for supervised phishing detection.
-  - `fraud_address_detection_test.py`: Interactive phishing prediction script.
-  - `unsupervised_flashloan_detection_model.py`: Graph AutoEncoder (GAE) + KMeans flash-loan detector.
-  - `Build_the_capital_flow.py`: Visualizes transaction flows using NetworkX.
+  Smart contract vulnerability detection module based on the SmartBugs dataset:
+  - `dataset/`: Contains curated smart contract vulnerability data.
+  - `scripts/`: Helper scripts for preprocessing and analysis.
+  - `ICSE2020_curated_69.txt`: Curated dataset list used in ICSE2020.
+  - `LICENSE`: Project license.
+  - `README.md`: Module-specific readme and usage.
+  - `data_processing.py`: Loads and processes the SmartBugs dataset, token/line masking.
+  - `main.py`: CodeBERT fine-tuning and inference script.
+  - `test.py`: Evaluation and testing script.
+  - `versions.csv`: Tracks dataset versions and changes.
 
 - `environment.yml`  
   Conda environment specification to replicate the project environment.
