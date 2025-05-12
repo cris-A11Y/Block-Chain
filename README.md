@@ -12,13 +12,13 @@ An end-to-end framework for detecting smart contract vulnerabilities and on-chai
 
 ## 📂 Repository Layout
 
-- `contracts_vuln_detection/`  
+- `On-chain anomaly detection/`  
   Contains modules and scripts related to smart contract vulnerability detection tasks:
   - `data_processing.py`: Loads the SmartBugs dataset and performs token/line masking.
   - `main.py`: CodeBERT fine-tuning and inference script.
   - `preprocess_single_file.py`: Helper script to preprocess a single Solidity (`.sol`) file.
 
-- `onchain_abuse_detection/`  
+- `smartbugs-curated-main/`  
   A module focused on on-chain abuse detection, including phishing and flash loan attacks:
   - `data_processing.py`: Converts CSV data to PyTorch Geometric (PyG) graph format.
   - `fraud_address_detection_model.py`: Graph Convolutional Network (GCN) model for supervised phishing detection.
